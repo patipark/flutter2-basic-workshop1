@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:smart_news/Screens/Dashboard/DashboardScreen.dart';
 import 'package:smart_news/Themes/app_theme.dart';
+import 'package:smart_news/routers.dart';
+
+// สร้างตัวแปรไว้เก็บ ULR หน้าหลัก
+var initURL;
 
 void main(){
+
+  initURL = '/dashboard';
+
   runApp(MyApp());
 }
 
@@ -19,9 +25,8 @@ class _MyAppState extends State<MyApp> {
       theme: AppTheme.lightTheme.copyWith(
         scaffoldBackgroundColor: Theme.of(context).cardTheme.color
       ),
-      home: Scaffold(
-        body: DashboardScreen(),
-      ),
+      initialRoute: initURL,
+      routes: routes,
     );
   }
 }
